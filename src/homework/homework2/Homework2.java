@@ -1,31 +1,75 @@
-package homework.homework2;
+package lessons.homework17_10;
 
-public class Homework2 {
+import java.util.Random;
+
+public class Homework3 {
+
+    public static void main(String[] args) {
+        Random random = new Random();
+        int[] array = new int[8];
+
+        for (int i = 0; i < array.length; i++) {
+            array[i] = random.nextInt(50) + 1;
+        }
+
+        System.out.print("Исходный массив: ");
+        for (int num : array) {
+            System.out.print(num + " ");
+        }
+        System.out.println();
+
+
+        for (int i = 1; i < array.length; i += 2) {
+            array[i] = 0;
+        }
+
+        System.out.print("Измененный массив: ");
+        for (int num : array) {
+            System.out.print(num + " ");
+        }
+    }
+}
+
+
+
+package lessons.homework17_10;
+
+import java.util.Random;
+
+public class Homework4 {
 
 
     public static void main(String[] args) {
-        System.out.println("Addition = " + addition(7, 8));
-        System.out.println("Division = " + division(10, 7));
-        System.out.println("Miltiplikation = " + multiplikation(10, 3));
-        System.out.println("Subraktion = " + subraktion(16, 5));
+        Random random = new Random();
+        int[] array = new int[5];
 
-    }
 
-    private static int addition(int a, int b) {
-        return a + b;
+        for (int i = 0; i < array.length; i++) {
+            array[i] = random.nextInt(90) + 10; // [10, 99]
+        }
 
-    }
 
-    private static int division(int a, int b) {
-        return a - b;
-    }
+        System.out.print("Массив: ");
+        for (int num : array) {
+            System.out.print(num + " ");
+        }
+        System.out.println();
 
-    private static int multiplikation(int a, int b) {
-        return a * b;
-    }
 
-    private static double subraktion(double a, double b) {
-        return a / b;
+        boolean isStrictlyIncreasing = true;
+        for (int i = 1; i < array.length; i++) {
+            if (array[i] <= array[i - 1]) {
+                isStrictlyIncreasing = false;
+                break;
+            }
+        }
+
+
+        if (isStrictlyIncreasing) {
+            System.out.println("Массив является строго возрастающей последовательностью.");
+        } else {
+            System.out.println("Массив не является строго возрастающей последовательностью.");
+        }
     }
 }
 
